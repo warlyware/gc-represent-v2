@@ -4,18 +4,20 @@ const sketch = (p5) => {
     let longitude = 144.9631;
     let latitude = -37.8136;
     let canvas;
+    const radius = 200;
+
     p5.setup = () => {
-        canvas = p5.createCanvas(600, 600, p5.WEBGL);
+        canvas = p5.createCanvas(window.innerWidth, window.innerHeight, p5.WEBGL);
         canvas.parent('sketch');
     }
+
     p5.draw = () => {
-        p5.background(51);
+        p5.background(20);
         p5.rotateY(p5.frameCount * 0.01);
         p5.angle += 0.05;
 
-        p5.directionalLight(248, 117, 157, 0.5, 0.5, 0.5);
+        p5.directionalLight(255, 255, 255, 0.5, 0.8, 0.5);
         p5.noStroke();
-        const radius = 200;
         p5.sphere(radius);
 
         let theta = p5.radians(latitude) + p5.PI * 2;
@@ -24,8 +26,8 @@ const sketch = (p5) => {
         let y = -radius * p5.sin(theta) * p5.cos(phi);
         let z = radius * p5.cos(theta);
         console.log(z);
-        p5.translate(x, y, z - 10);
-        p5.box(10);
+        p5.translate(x, y, z - 15);
+        p5.sphere(10);
     }
 }
 
