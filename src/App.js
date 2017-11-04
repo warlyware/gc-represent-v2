@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import SketchComponent from './sketch/Sketch';
+import Globe from './sketch/Globe';
 
 class App extends Component {
-
-  componentDidMount() {
-    // new p5(sketch);
-  }
 
   render() {
     return (
       <div className="App">
-        <SketchComponent />
+        <Globe />
       </div>
     );
   }

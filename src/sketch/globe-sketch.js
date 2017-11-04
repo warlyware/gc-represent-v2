@@ -5,6 +5,8 @@ const sketch = (p5) => {
     let latitude = -37.8136;
     let canvas;
     const radius = 200;
+    const userSize = 10;
+    const heightFromSurface = -15;
 
     p5.setup = () => {
         canvas = p5.createCanvas(window.innerWidth, window.innerHeight, p5.WEBGL);
@@ -26,8 +28,9 @@ const sketch = (p5) => {
         let y = -radius * p5.sin(theta) * p5.cos(phi);
         let z = radius * p5.cos(theta);
         console.log(z);
-        p5.translate(x, y, z - 15);
-        p5.sphere(10);
+        p5.translate(x, y, z + heightFromSurface);
+        p5.directionalLight(255, 0, 255, 0.5, 0.8, 0.5);
+        p5.sphere(userSize);
     }
 }
 

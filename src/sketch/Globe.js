@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Sketch from './p5-sketch';
+import GlobeSketch from './globe-sketch';
 
-export default class SketchComponent extends Component {
+export default class Globe extends Component {
 
     componentDidMount() {
-        Sketch.start();
+        GlobeSketch.start();
     }
 
     render() {
